@@ -17,7 +17,7 @@ export const SQUARE_CHECKOUT_URL =
   "https://checkout.square.site/merchant/MLCYXVB8D5ZTH/checkout/XZUNS6SLJS6Z7I36OTTHSRBF";
 
 export const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbyKTq0TYcOhpPfdxd2f-n9T8AVIRTMP-0knOGh82Im68DDsbsFEW6rYmfBx_Dl1eF0/exec";
+  "https://script.google.com/macros/s/AKfycbxRZUHg_VO4IQhKQQFzLGLKLSYxcCX6ynQhb5YJCkCktPYS9BvrwoTiJalVsjq3zpk/exec";
 
 /* ─── Contact ─── */
 export const BROKER_PHONE = "954-586-7655";
