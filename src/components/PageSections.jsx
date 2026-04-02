@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { COLORS, BROKER_PHONE } from "../constants";
+import { COLORS, SERVICES, BROKER_PHONE } from "../constants";
 import FadeIn from "./FadeIn";
 import SunLogo from "./SunLogo";
 
-/* ═══════════════════════════════════════
-   VALUE PROPS
-   ═══════════════════════════════════════ */
+/* ═══ SERVICES ═══ */
 const VALUE_PROP_ITEMS = [
   { icon: "◇", title: "Fully Remote", description: "No office. No commute. Our CRM and tools are 100% online. Run your business from anywhere in South Florida." },
   { icon: "◎", title: "Zero Monthly Fees", description: "Just $99 per year. No desk fees, no tech fees, no hidden charges. Period." },
@@ -47,9 +45,7 @@ export function ValueProps() {
   );
 }
 
-/* ═══════════════════════════════════════
-   COMMISSION STRUCTURE
-   ═══════════════════════════════════════ */
+/* ═══ COMMISSION ═══ */
 const COMMISSION_ROWS = [
   { rate: "100%", title: "Commission on Your Sales", detail: "Flat $399 transaction fee per file. That's it." },
   { rate: "90%", title: "Payout on Your Rentals", detail: "You source the tenant, you keep 90%." },
@@ -100,9 +96,7 @@ export function Commission({ onApplyClick }) {
   );
 }
 
-/* ═══════════════════════════════════════
-   HOW IT WORKS
-   ═══════════════════════════════════════ */
+/* ═══ HOW IT WORKS ═══ */
 const PROCESS_STEPS = [
   { number: "01", title: "Apply Online", description: "Complete your application, review and e-sign your documents, upload your license, and pay $99. All done in minutes." },
   { number: "02", title: "Get Set Up", description: "Receive your welcome email with CRM login. Set your preferred areas and showing availability." },
@@ -149,9 +143,7 @@ export function HowItWorks({ onApplyClick }) {
   );
 }
 
-/* ═══════════════════════════════════════
-   AREAS
-   ═══════════════════════════════════════ */
+/* ═══ AREAS ═══ */
 const SERVICE_AREAS = [
   { name: "Miami-Dade", cities: "Miami Beach · Brickell · Coral Gables · Key Biscayne" },
   { name: "Broward", cities: "Fort Lauderdale · Pompano Beach · Hollywood · Dania Beach" },
@@ -188,9 +180,7 @@ export function Areas() {
   );
 }
 
-/* ═══════════════════════════════════════
-   FAQ
-   ═══════════════════════════════════════ */
+/* ═══ FAQ ═══ */
 const FAQ_ITEMS = [
   { question: "Do I need a real estate license?", answer: "Yes. You must hold an active Florida real estate sales associate or broker license to join Sun Ocean Realty." },
   { question: "What does $99/year cover?", answer: "Your annual fee covers brokerage affiliation, online CRM and office tools, lead distribution, and full broker support. No desk fees, tech fees, or monthly charges." },
@@ -204,7 +194,6 @@ const FAQ_ITEMS = [
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
-
   return (
     <section id="faq" style={{ background: COLORS.sand, padding: "100px 24px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
@@ -218,10 +207,7 @@ export function FAQ() {
           {FAQ_ITEMS.map((item, index) => (
             <FadeIn key={index} delay={index * 0.05}>
               <div style={{ background: COLORS.white, borderRadius: 2, overflow: "hidden" }}>
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  style={{ width: "100%", textAlign: "left", background: "none", border: "none", padding: "20px 24px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}
-                >
+                <button onClick={() => setOpenIndex(openIndex === index ? null : index)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", padding: "20px 24px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
                   <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", color: COLORS.navy, fontWeight: 500 }}>{item.question}</span>
                   <span style={{ color: COLORS.gold, fontSize: "1.2rem", transition: "transform 0.3s", transform: openIndex === index ? "rotate(45deg)" : "rotate(0deg)", flexShrink: 0 }}>+</span>
                 </button>
@@ -237,14 +223,12 @@ export function FAQ() {
   );
 }
 
-/* ═══════════════════════════════════════
-   CALL-TO-ACTION (bottom)
-   ═══════════════════════════════════════ */
+/* ═══ CALL TO ACTION ═══ */
 export function CallToAction({ onApplyClick }) {
   return (
     <section style={{ background: `linear-gradient(135deg, ${COLORS.navy} 0%, ${COLORS.deepBlue} 100%)`, padding: "80px 24px", textAlign: "center" }}>
-      <div style={{ maxWidth: 500, margin: "0 auto" }}>
-        <SunLogo size={56} />
+      <div style={{ maxWidth: 500, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <SunLogo size={56} light />
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: COLORS.white, margin: "24px 0 16px", fontWeight: 700 }}>Ready to Join?</h2>
         <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: "0 0 32px", fontWeight: 300 }}>
           Complete your application in minutes. Sign documents online, upload your license, and pay $99 to start earning.
@@ -254,33 +238,27 @@ export function CallToAction({ onApplyClick }) {
         </button>
         <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.85rem", color: "rgba(255,255,255,0.4)", marginTop: 24, fontWeight: 300 }}>
           Questions? Call or text{" "}
-          <a href={`tel:${BROKER_PHONE}`} style={{ color: COLORS.gold, textDecoration: "none" }}>
-            {BROKER_PHONE}
-          </a>
+          <a href={`tel:${BROKER_PHONE}`} style={{ color: COLORS.gold, textDecoration: "none" }}>{BROKER_PHONE}</a>
         </p>
       </div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════ */
+/* ═══ FOOTER ═══ */
 export function Footer() {
   return (
     <footer style={{ background: "#060e1a", padding: "40px 24px 24px", borderTop: `1px solid rgba(201,168,76,0.1)` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <SunLogo size={28} />
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.9rem", color: COLORS.white }}>Sun Ocean Realty</span>
-          </div>
+          {/* Logo — no separate text needed, SunLogo includes it */}
+          <SunLogo size={32} light />
           <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", fontWeight: 300 }}>
             © {new Date().getFullYear()} Sun Ocean Realty LLC.
           </div>
         </div>
 
-        {/* Industry logos / affiliations */}
+        {/* Industry affiliations */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, flexWrap: "wrap", padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
           <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
             <rect x="3" y="14" width="26" height="15" stroke="rgba(255,255,255,0.45)" strokeWidth="1.2" fill="none" />
@@ -292,10 +270,6 @@ export function Footer() {
           <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.65rem", color: "rgba(255,255,255,0.35)", fontWeight: 600 }}>REALTOR®</span>
           <span style={{ color: "rgba(255,255,255,0.12)" }}>|</span>
           <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.65rem", color: "rgba(255,255,255,0.35)", fontWeight: 600 }}>MLS</span>
-          <span style={{ color: "rgba(255,255,255,0.12)" }}>|</span>
-          <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.58rem", color: "rgba(255,255,255,0.3)" }}>Miami Association of REALTORS®</span>
-          <span style={{ color: "rgba(255,255,255,0.12)" }}>|</span>
-          <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.58rem", color: "rgba(255,255,255,0.3)" }}>REALTOR® Assoc. of Greater Fort Lauderdale</span>
         </div>
 
         <div style={{ textAlign: "center", paddingTop: 16 }}>

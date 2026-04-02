@@ -16,16 +16,13 @@ export const COLORS = {
 export const SQUARE_CHECKOUT_URL =
   "https://checkout.square.site/merchant/MLCYXVB8D5ZTH/checkout/XZUNS6SLJS6Z7I36OTTHSRBF";
 
-export const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbxRZUHg_VO4IQhKQQFzLGLKLSYxcCX6ynQhb5YJCkCktPYS9BvrwoTiJalVsjq3zpk/exec";
-
 /* ─── Contact ─── */
 export const BROKER_PHONE = "954-586-7655";
 
 /* ─── Onboarding Step Labels ─── */
 export const ONBOARDING_STEP_LABELS = [
   "Your Info",
-  "Review & Agree",
+  "Review Docs",
   "Sign",
   "Tax Info",
   "License",
