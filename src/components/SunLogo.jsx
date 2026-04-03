@@ -84,7 +84,7 @@ export default function SunLogo({ size = 48, light = true }) {
             lineHeight: 1.15,
           }}
         >
-          SUN OCEAN
+          
         </div>
         <div
           style={{
@@ -96,7 +96,7 @@ export default function SunLogo({ size = 48, light = true }) {
             marginTop: 1,
           }}
         >
-          R E A L T Y
+          
         </div>
       </div>
     </div>
