@@ -32,34 +32,44 @@ export default function Nav({ onApplyClick }) {
 
   return (
     <>
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: isScrolled ? "rgba(10,22,40,0.97)" : "transparent", backdropFilter: isScrolled ? "blur(12px)" : "none", borderBottom: isScrolled ? `1px solid rgba(201,168,76,0.15)` : "none", transition: "all 0.4s", padding: isScrolled ? "12px 0" : "20px 0" }}>
-        <div style={{ width: "100%", maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          
-          {/* LEFT SIDE: Logo only */}
-          <div style={{ cursor: "pointer", flexShrink: 0 }} onClick={() => scrollToSection("home")}>
-            <SunLogo size={isScrolled ? 34 : 38} light={true} />
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
+        background: isScrolled ? "rgba(10,22,40,0.97)" : "transparent",
+        backdropFilter: isScrolled ? "blur(12px)" : "none",
+        borderBottom: isScrolled ? "1px solid rgba(201,168,76,0.15)" : "none",
+        transition: "all 0.4s", padding: isScrolled ? "12px 0" : "20px 0",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+
+          {/* LOGO — just the component, nothing else */}
+          <div style={{ cursor: "pointer" }} onClick={() => scrollToSection("home")}>
+            <SunLogo size={isScrolled ? 34 : 38} light />
           </div>
 
-          {/* RIGHT SIDE: Navigation Links & Hamburger Grouped Together */}
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <div className="nav-desktop" style={{ display: "flex", gap: 32, alignItems: "center" }}>
-              {NAV_LINKS.map(({ id, label }) => (
-                <span key={id} style={navLinkStyle} onClick={() => scrollToSection(id)} onMouseOver={(e) => (e.target.style.color = COLORS.gold)} onMouseOut={(e) => (e.target.style.color = COLORS.white)}>
-                  {label}
-                </span>
-              ))}
-              <button onClick={onApplyClick} style={{ background: COLORS.gold, color: COLORS.navy, border: "none", padding: "10px 24px", fontFamily: "'Outfit', sans-serif", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600, cursor: "pointer", borderRadius: 2 }}>
-                Join Now
-              </button>
-            </div>
-
-            <div className="nav-mobile" style={{ display: "none", cursor: "pointer", padding: 8 }} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              <div style={{ width: 24, height: 2, background: COLORS.white, marginBottom: 6, transition: "all 0.3s", transform: isMobileMenuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
-              <div style={{ width: 24, height: 2, background: COLORS.white, marginBottom: 6, opacity: isMobileMenuOpen ? 0 : 1 }} />
-              <div style={{ width: 24, height: 2, background: COLORS.white, transition: "all 0.3s", transform: isMobileMenuOpen ? "rotate(-45deg) translate(6px,-6px)" : "none" }} />
-            </div>
+          {/* Desktop nav links */}
+          <div className="nav-desktop" style={{ display: "flex", gap: 32, alignItems: "center" }}>
+            {NAV_LINKS.map(({ id, label }) => (
+              <span key={id} style={navLinkStyle} onClick={() => scrollToSection(id)}
+                onMouseOver={(e) => (e.target.style.color = COLORS.gold)}
+                onMouseOut={(e) => (e.target.style.color = COLORS.white)}>
+                {label}
+              </span>
+            ))}
+            <button onClick={onApplyClick} style={{
+              background: COLORS.gold, color: COLORS.navy, border: "none", padding: "10px 24px",
+              fontFamily: "'Outfit', sans-serif", fontSize: "0.8rem", letterSpacing: "0.12em",
+              textTransform: "uppercase", fontWeight: 600, cursor: "pointer", borderRadius: 2,
+            }}>
+              Join Now
+            </button>
           </div>
 
+          {/* Mobile hamburger */}
+          <div className="nav-mobile" style={{ display: "none", cursor: "pointer", padding: 8 }} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <div style={{ width: 24, height: 2, background: COLORS.white, marginBottom: 6, transition: "all 0.3s", transform: isMobileMenuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
+            <div style={{ width: 24, height: 2, background: COLORS.white, marginBottom: 6, opacity: isMobileMenuOpen ? 0 : 1 }} />
+            <div style={{ width: 24, height: 2, background: COLORS.white, transition: "all 0.3s", transform: isMobileMenuOpen ? "rotate(-45deg) translate(6px,-6px)" : "none" }} />
+          </div>
         </div>
       </nav>
 

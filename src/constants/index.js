@@ -11,55 +11,33 @@ export const COLORS = {
   slate: "#64748b",
   red: "#dc2626",
 };
-
-/* ─── External Links ─── */
+export const WEBHOOK_URL =
+  "https://script.google.com/macros/s/AKfycbzV_kMm8q6LsLg_-E9oDfSsSxXeGGdkXhCYb9J7VTyzXJKG6kmogB5_BFIGyDKphsw/exec";
+/* ─── Square Payment Link (original) ─── */
 export const SQUARE_CHECKOUT_URL =
   "https://checkout.square.site/merchant/MLCYXVB8D5ZTH/checkout/XZUNS6SLJS6Z7I36OTTHSRBF";
 
 /* ─── Contact ─── */
 export const BROKER_PHONE = "954-586-7655";
 
-/* ─── Onboarding Step Labels ─── */
-export const ONBOARDING_STEP_LABELS = [
-  "Your Info",
-  "Review Docs",
-  "Sign",
-  "Tax Info",
-  "License",
-  "Pay",
-];
+/* ─── Onboarding Steps ─── */
+export const ONBOARDING_STEP_LABELS = ["Your Info", "Review Docs", "Sign", "Tax Info", "License", "Pay"];
 
-/* ─── Document Keys & Display Titles ─── */
+/* ─── Document Keys & Titles ─── */
 export const DOCUMENT_KEYS = ["ica", "policy", "showing", "subscription", "dbpr", "w9"];
-
 export const DOCUMENT_TITLES = {
-  ica: "ICA-7",
-  policy: "Office Policy",
-  showing: "Showing Addendum",
-  subscription: "Subscription",
-  dbpr: "DBPR RE 11",
-  w9: "W-9",
+  ica: "ICA-7", policy: "Office Policy", showing: "Showing Addendum",
+  subscription: "Subscription", dbpr: "DBPR RE 11", w9: "W-9",
 };
 
 /* ─── Shared Input Styles ─── */
 export const INPUT_STYLE = {
-  width: "100%",
-  padding: "12px 14px",
-  border: `1px solid ${COLORS.warmSand}`,
-  borderRadius: 3,
-  fontFamily: "'Outfit', sans-serif",
-  fontSize: "0.9rem",
-  background: COLORS.white,
-  color: COLORS.navy,
-  outline: "none",
-  boxSizing: "border-box",
+  width: "100%", padding: "12px 14px", border: `1px solid ${COLORS.warmSand}`,
+  borderRadius: 3, fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem",
+  background: COLORS.white, color: COLORS.navy, outline: "none", boxSizing: "border-box",
 };
 
 export const LABEL_STYLE = {
-  fontFamily: "'Outfit', sans-serif",
-  fontSize: "0.8rem",
-  color: COLORS.navy,
-  fontWeight: 500,
-  display: "block",
-  marginBottom: 6,
+  fontFamily: "'Outfit', sans-serif", fontSize: "0.8rem", color: COLORS.navy,
+  fontWeight: 500, display: "block", marginBottom: 6,
 };
