@@ -12,7 +12,7 @@ export const COLORS = {
   red: "#dc2626",
 };
 export const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbzV_kMm8q6LsLg_-E9oDfSsSxXeGGdkXhCYb9J7VTyzXJKG6kmogB5_BFIGyDKphsw/exec";
+  "https://script.google.com/macros/s/AKfycbxuTuepma9slXzUsWc5Z18EiYQkNJxDW9bJTnALF_ZWNZ_ut9MkTL6FidbYYmBmhNI/exec";
 /* ─── Square Payment Link (original) ─── */
 export const SQUARE_CHECKOUT_URL =
   "https://checkout.square.site/merchant/MLCYXVB8D5ZTH/checkout/XZUNS6SLJS6Z7I36OTTHSRBF";
